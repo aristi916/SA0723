@@ -27,6 +27,8 @@ public class Receipt {
 	 * Print Receipt
 	 */
 	public void print() {
+		System.out.println("===========================================================");
+		System.out.println("===========================================================");
 		System.out.println("Tool Code: " + itemCode);
 		System.out.println("Tool Type: " + toolType);
 		System.out.println("Tool Brand: " + brand);
@@ -39,6 +41,8 @@ public class Receipt {
 		System.out.println("Discount Percent: " + discountPercent + "%");
 		System.out.println("Discount Amount: $" + String.format("%,.2f", discountAmount));
 		System.out.println("Final Charge: $" + String.format("%,.2f", finalCharge));
+		System.out.println("===========================================================");
+		System.out.println("===========================================================");
 	}
 
 

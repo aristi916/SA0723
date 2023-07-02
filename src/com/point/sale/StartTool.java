@@ -71,13 +71,8 @@ public class StartTool {
 		// valid entries, compute the receipt
 		Receipt receipt = saleService.calculateRentalAgreement(input);
 		
-		System.out.println("===========================================================");
-		System.out.println("===========================================================");
 		// print receipt
 		receipt.print();
-		
-		System.out.println("===========================================================");
-		System.out.println("===========================================================");
 		
 		// continue?
 		if (continueStore()) {
@@ -117,17 +112,15 @@ public class StartTool {
 			sale.setRentalDays(scin.nextInt());
 			System.out.println("How much discount are you receiving?");
 			sale.setDiscountPercent(scin.nextInt());
-			System.out.println("When is the checkout date? Please use the format MM/DD/YY");
+			System.out.println("When is the checkout date? Please use the format MM/DD/YY (numbers)");
 			String dateStr = scin.next();
 			if (dateStr != null) {
 				SimpleDateFormat format = new SimpleDateFormat("MM/dd/yy");
 				sale.setCheckoutDate(format.parse(dateStr));
 			}
-			
-			System.out.println("===========================================================");
-			System.out.println("===========================================================");
 		} catch (Exception e) {
-			System.out.println("There was an unexpected error while reading your entries.");
+			System.out.println("There was an unexpected error while reading your entries. Please try again.");
+			receiveInput(sale);
 		}
 		
 	}

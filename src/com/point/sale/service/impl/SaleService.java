@@ -1,6 +1,5 @@
 package com.point.sale.service.impl;
 
-import java.text.DecimalFormat;
 import java.util.Date;
 
 import com.point.sale.data.Tools;
@@ -16,7 +15,6 @@ import com.point.sale.service.ItemService;
 public class SaleService {
 	
 	private static final Long DAY_IN_MILLIS = 86400000l;
-	private static final DecimalFormat df = new DecimalFormat("0.00");
 	
 	private ItemSaleFactory itemSaleFactory = new ItemSaleFactory();
 	
@@ -35,6 +33,7 @@ public class SaleService {
 		Integer daysToCharge = calculateDaysToCharge(saleItem.getCheckoutDate(), saleItem.getRentalDays(), item);
 		Date dueDate = calculateDueDate(saleItem.getCheckoutDate(), saleItem.getRentalDays());
 		Double preDiscountCharge = calculatePreDiscountCharge(rules, daysToCharge);
+		
 		Double discountAmount = (preDiscountCharge * saleItem.getDiscountPercent())/100;
 		Double finalCharge = preDiscountCharge - discountAmount;
 		
