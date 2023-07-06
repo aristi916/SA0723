@@ -49,6 +49,7 @@ public class StartTool {
 		// Setup list of tools and holidays
 		Tools.initialize();
 		Holidays.initialize();
+		System.out.println("Hello! Welcome to Simon's Store!");
 	}
 	
 	public static void main(String[] args) {
@@ -63,8 +64,6 @@ public class StartTool {
 	
 	
 	public void startUpStore() {
-		
-		System.out.println("Hello! Welcome to Simon's Store!");
 		
 		// start input
 		Sale input = new Sale(); 
@@ -122,6 +121,8 @@ public class StartTool {
 				SimpleDateFormat format = new SimpleDateFormat("MM/dd/yy");
 				sale.setCheckoutDate(format.parse(dateStr));
 			}
+			System.out.println("===========================================================");
+			System.out.println("===========================================================");
 		} catch (Exception e) {
 			System.out.println("There was an unexpected error while reading your entries. Please try again.");
 			receiveInput(sale);
