@@ -13,25 +13,25 @@ import com.point.sale.model.StaticHoliday;
 import com.point.sale.model.NonStaticHoliday.DayOfWeek;
 import com.point.sale.model.NonStaticHoliday.NumberDayOfWeekMonth;
 
+
+/**
+ * HolidayDates will store static holidaysDates that will be fulfilled on a need basis if not part of the map
+ * Parent map's key will be year, and within that key's value will be a map whose key will be month which will contain list of holidaydates
+ * 
+ * example:
+ * 		key 	| value
+ * 		2023   -> key   | value
+ * 					7  -> HolidayDate(Holiday("July Fourth" , 4, 7), 2023)
+ * 					...
+ * 		.
+ * 		.
+ * 		. 
+ * 		2024   -> 	7  -> HolidayDate(Holiday("July Fourth" , 4, 7), 2023)
+ * 		.			...
+ * 		.
+ * 		.
+ */
 public class HolidaysDates {
-	
-	/**
-	 * HolidayDates will store static holidaysDates that will be fulfilled on a need basis if not part of the map
-	 * Parent map's key will be year, and within that key's value will be a map whose key will be month which will contain list of holidaydates
-	 * 
-	 * example:
-	 * 		key 	| value
-	 * 		2023   -> key   | value
-	 * 					7  -> HolidayDate(Holiday("July Fourth" , 4, 7), 2023)
-	 * 					...
-	 * 		.
-	 * 		.
-	 * 		. 
-	 * 		2024   -> 	7  -> HolidayDate(Holiday("July Fourth" , 4, 7), 2023)
-	 * 		.			...
-	 * 		.
-	 * 		.
-	 */
 	
 	public static HashMap<Integer, HashMap<Integer, Set<HolidayDate>>> holidaysDates;
 	

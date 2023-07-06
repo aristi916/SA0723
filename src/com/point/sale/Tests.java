@@ -33,12 +33,14 @@ public class Tests {
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "2";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "3.98";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "3.58";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/05/20";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	@Test
 	public void test3() throws ParseException {
@@ -47,12 +49,14 @@ public class Tests {
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "3";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "4.47";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "3.35";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/07/15";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	@Test
 	public void test4() throws ParseException {
@@ -61,12 +65,14 @@ public class Tests {
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "3";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "8.97";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "8.97";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "09/09/15";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	@Test
 	public void test5() throws ParseException {
@@ -75,12 +81,14 @@ public class Tests {
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "5";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "14.95";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "14.95";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/11/15";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	@Test
 	public void test6() throws ParseException {
@@ -89,12 +97,14 @@ public class Tests {
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "1";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "2.99";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "1.50";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/06/20";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	@Test
 	public void test7() throws ParseException {
@@ -120,62 +130,104 @@ public class Tests {
 	
 	@Test
 	public void test10() throws ParseException {
-		Sale sale = new Sale("CHNS", format.parse("7/2/21"), 5, 10);
+		Sale sale = new Sale("CHNS", format.parse("7/2/21"), 5, 5);
 		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "3";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "4.47";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "4.25";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	
 	@Test
 	public void test11() throws ParseException {
-		Sale sale = new Sale("LADW", format.parse("7/2/21"), 5, 10);
+		Sale sale = new Sale("LADW", format.parse("7/2/21"), 5, 5);
 		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "4";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "7.96";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "7.56";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	
 	@Test
 	public void test12() throws ParseException {
-		Sale sale = new Sale("JAKD", format.parse("7/2/21"), 5, 10);
+		Sale sale = new Sale("JAKD", format.parse("7/2/21"), 5, 5);
 		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "2";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "5.98";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "5.68";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "07/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 	
 	@Test
 	public void test13() throws ParseException {
-		Sale sale = new Sale("JAKR", format.parse("7/2/21"), 5, 10);
+		Sale sale = new Sale("JAKR", format.parse("9/2/21"), 5, 5);
 		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
 		assertEquals(Boolean.TRUE, valid.getValidInput());
 		assertNull(valid.getValidationError());
 		Receipt receipt = saleService.calculateRentalAgreement(sale);
-		Integer validDayToCharge = 3;
+		String validDayToCharge = "2";
 		assertEquals(validDayToCharge, receipt.getChargeDays());
-		Double validPreDiscountCharge = 3.3;
+		String validPreDiscountCharge = "5.98";
 		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
-		Double validFinalCharge = 10.0;
+		String validFinalCharge = "5.68";
 		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "09/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
+	}
+	
+	@Test
+	public void test14() throws ParseException {
+		Sale sale = new Sale("LADW", format.parse("9/2/21"), 5, 5);
+		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
+		assertEquals(Boolean.TRUE, valid.getValidInput());
+		assertNull(valid.getValidationError());
+		Receipt receipt = saleService.calculateRentalAgreement(sale);
+		String validDayToCharge = "4";
+		assertEquals(validDayToCharge, receipt.getChargeDays());
+		String validPreDiscountCharge = "7.96";
+		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
+		String validFinalCharge = "7.56";
+		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "09/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
+	}
+	
+	@Test
+	public void test15() throws ParseException {
+		Sale sale = new Sale("CHNS", format.parse("9/2/21"), 5, 5);
+		ValidationResponse valid = InputValidationHelper.validateSaleInput(sale);
+		assertEquals(Boolean.TRUE, valid.getValidInput());
+		assertNull(valid.getValidationError());
+		Receipt receipt = saleService.calculateRentalAgreement(sale);
+		String validDayToCharge = "3";
+		assertEquals(validDayToCharge, receipt.getChargeDays());
+		String validPreDiscountCharge = "4.47";
+		assertEquals(validPreDiscountCharge, receipt.getPreDiscountCharge());
+		String validFinalCharge = "4.25";
+		assertEquals(validFinalCharge, receipt.getFinalCharge());
+		String validDueDate = "09/07/21";
+		assertEquals(validDueDate, receipt.getDueDate());
 	}
 
 }

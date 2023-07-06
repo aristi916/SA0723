@@ -30,26 +30,27 @@ public class ToolService implements ItemService {
 		date.set(Calendar.MINUTE, 0);
 		date.set(Calendar.SECOND, 0);
 		date.set(Calendar.MILLISECOND, 0);
+		date = CalendarHelper.rollDay(date); // start the day after the checkout
 		
 		while (days > 0) {
-			System.out.println("Days " + days);
+//			System.out.println("Days " + days);
 			if (CalendarHelper.isWeekend(date) && !toolRules.getWeekendCharge()) {
-				System.out.println("Date is weekend and not chargable " + date.getTime());
+//				System.out.println("Date is weekend and not chargable " + date.getTime());
 				days--;
 				date = CalendarHelper.rollDay(date);
 				continue;
 			}
 			if (CalendarHelper.isHoliday(date) && !toolRules.getHolidayCharge()) {
-				System.out.println("Date is holiday and not chargable " + date.getTime());
+//				System.out.println("Date is holiday and not chargable " + date.getTime());
 				days--;
 				date = CalendarHelper.rollDay(date);
 				continue;
 			}
-			System.out.println("charging date " + date.getTime());
+//			System.out.println("charging date " + date.getTime());
 			days--;
 			daysToCharge++;
 			date = CalendarHelper.rollDay(date);
-			System.out.println("Days to charge " + daysToCharge);
+//			System.out.println("Days to charge " + daysToCharge);
 		}
 		
 		

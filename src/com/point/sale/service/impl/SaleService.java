@@ -39,7 +39,7 @@ public class SaleService {
 		
 		Receipt receipt = new Receipt();
 		receipt.setBrand(toolItem.getBrandName());
-		receipt.setToolType(toolItem.getType());
+		receipt.setItemType(toolItem.getType().toString());
 		receipt.setItemCode(toolItem.getCode());
 		receipt.setRentalDays(saleItem.getRentalDays());
 		receipt.setCheckoutDate(saleItem.getCheckoutDate());

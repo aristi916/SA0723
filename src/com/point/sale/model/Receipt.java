@@ -11,17 +11,17 @@ public class Receipt {
 	 * This will have all the values that need to be returned to the user once calculated the sale.
 	 */
 	private String itemCode;
-	private Tool.ToolType toolType;
+	private String itemType;
 	private String brand;
-	private Integer rentalDays;
-	private Date checkoutDate;
-	private Date dueDate;
-	private Double dailyRentalCharge;
-	private Integer chargeDays;
-	private Double preDiscountCharge;
-	private Integer discountPercent;
-	private Double discountAmount;
-	private Double finalCharge;
+	private String rentalDays;
+	private String checkoutDate;
+	private String dueDate;
+	private String dailyRentalCharge;
+	private String chargeDays;
+	private String preDiscountCharge;
+	private String discountPercent;
+	private String discountAmount;
+	private String finalCharge;
 	
 	/**
 	 * Print Receipt
@@ -30,139 +30,115 @@ public class Receipt {
 		System.out.println("===========================================================");
 		System.out.println("===========================================================");
 		System.out.println("Tool Code: " + itemCode);
-		System.out.println("Tool Type: " + toolType);
+		System.out.println("Tool Type: " + itemType);
 		System.out.println("Tool Brand: " + brand);
 		System.out.println("Rental Days: " + rentalDays);
-		System.out.println("Check out Date: " + CalendarHelper.formatDate(checkoutDate));
-		System.out.println("Due Date: " + CalendarHelper.formatDate(dueDate));
-		System.out.println("Daily Rental Charge: $" + String.format("%,.2f", dailyRentalCharge));
+		System.out.println("Check out Date: " + checkoutDate);
+		System.out.println("Due Date: " + dueDate);
+		System.out.println("Daily Rental Charge: $" + dailyRentalCharge);
 		System.out.println("Charge Days: " + chargeDays);
-		System.out.println("Pre-Discount Charge: $" + String.format("%,.2f", preDiscountCharge)) ;
+		System.out.println("Pre-Discount Charge: $" + preDiscountCharge) ;
 		System.out.println("Discount Percent: " + discountPercent + "%");
-		System.out.println("Discount Amount: $" + String.format("%,.2f", discountAmount));
-		System.out.println("Final Charge: $" + String.format("%,.2f", finalCharge));
+		System.out.println("Discount Amount: $" + discountAmount);
+		System.out.println("Final Charge: $" + finalCharge);
 		System.out.println("===========================================================");
 		System.out.println("===========================================================");
 	}
-
 
 	public String getItemCode() {
 		return itemCode;
 	}
 
-
 	public void setItemCode(String itemCode) {
 		this.itemCode = itemCode;
 	}
-
-
-	public Tool.ToolType getToolType() {
-		return toolType;
+	
+	public String getItemType() {
+		return itemType;
 	}
 
-
-	public void setToolType(Tool.ToolType toolType) {
-		this.toolType = toolType;
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
-
 
 	public String getBrand() {
 		return brand;
 	}
 
-
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 
-
-	public Integer getRentalDays() {
+	public String getRentalDays() {
 		return rentalDays;
 	}
 
-
 	public void setRentalDays(Integer rentalDays) {
-		this.rentalDays = rentalDays;
+		this.rentalDays = rentalDays.toString();
 	}
 
-
-	public Date getCheckoutDate() {
+	public String getCheckoutDate() {
 		return checkoutDate;
 	}
 
-
 	public void setCheckoutDate(Date checkoutDate) {
-		this.checkoutDate = checkoutDate;
+		this.checkoutDate = CalendarHelper.formatDate(checkoutDate);
 	}
 
-
-	public Date getDueDate() {
+	public String getDueDate() {
 		return dueDate;
 	}
 
-
 	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
+		this.dueDate = CalendarHelper.formatDate(dueDate);
 	}
 
-
-	public Double getDailyRentalCharge() {
+	public String getDailyRentalCharge() {
 		return dailyRentalCharge;
 	}
 
-
 	public void setDailyRentalCharge(Double dailyRentalCharge) {
-		this.dailyRentalCharge = dailyRentalCharge;
+		this.dailyRentalCharge = String.format("%,.2f", dailyRentalCharge);
 	}
 
-
-	public Integer getChargeDays() {
+	public String getChargeDays() {
 		return chargeDays;
 	}
 
-
 	public void setChargeDays(Integer chargeDays) {
-		this.chargeDays = chargeDays;
+		this.chargeDays = chargeDays.toString();
 	}
 
-
-	public Double getPreDiscountCharge() {
+	public String getPreDiscountCharge() {
 		return preDiscountCharge;
 	}
 
-
 	public void setPreDiscountCharge(Double preDiscountCharge) {
-		this.preDiscountCharge = preDiscountCharge;
+		this.preDiscountCharge = String.format("%,.2f", preDiscountCharge);
 	}
 
-
-	public Integer getDiscountPercent() {
+	public String getDiscountPercent() {
 		return discountPercent;
 	}
 
-
 	public void setDiscountPercent(Integer discountPercent) {
-		this.discountPercent = discountPercent;
+		this.discountPercent = discountPercent.toString();
 	}
 
-
-	public Double getDiscountAmount() {
+	public String getDiscountAmount() {
 		return discountAmount;
 	}
 
-
 	public void setDiscountAmount(Double discountAmount) {
-		this.discountAmount = discountAmount;
+		this.discountAmount = String.format("%,.2f", discountAmount);
 	}
 
-
-	public Double getFinalCharge() {
+	public String getFinalCharge() {
 		return finalCharge;
 	}
 
-
 	public void setFinalCharge(Double finalCharge) {
-		this.finalCharge = finalCharge;
+		this.finalCharge = String.format("%,.2f", finalCharge);
 	}
-
+	
 }

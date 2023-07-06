@@ -12,14 +12,19 @@ public class Holidays {
 	
 	public static HashMap<Integer, Set<Holiday>> holidays;
 	
+	/**
+	 * This class is a for storing a list of holidays.
+	 * It represents a DB with the holiday list.
+	 * NOTE: for the number of the month, it starts at 0, not at 1 (i.e. Jan = 0, Dec = 11)
+	 */
+	
 	public static void initialize() {
-		System.out.println("Initializing Holidays");
+//		System.out.println("Initializing Holidays");
 		
 		if (holidays == null || holidays.isEmpty()) {
 			holidays = new HashMap();
 		}
 		try {
-			// NOTE: for the number of the month, it starts at 0, not at 1
 			holidays.put(6, new HashSet<Holiday>());
 			holidays.get(6).add(new StaticHoliday("July Fourth", 4, 6));
 			
@@ -29,7 +34,7 @@ public class Holidays {
 			System.out.println("There was an error starting up holidays");
 		}
 		
-		System.out.println("Finish initializing holidays!");
+//		System.out.println("Finish initializing holidays!");
 	}
 
 }

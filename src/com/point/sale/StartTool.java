@@ -3,6 +3,10 @@ package com.point.sale;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+
 import com.point.sale.data.Holidays;
 import com.point.sale.data.Tools;
 import com.point.sale.helper.InputValidationHelper;
@@ -48,13 +52,13 @@ public class StartTool {
 	}
 	
 	public static void main(String[] args) {
-//		Result result = JUnitCore.runClasses(Tests.class);
-//		for (Failure failure : result.getFailures()) {
-//			System.out.println(failure.toString());
-//	  	}
-//		if (result.wasSuccessful()) {
+		Result result = JUnitCore.runClasses(Tests.class);
+		for (Failure failure : result.getFailures()) {
+			System.out.println(failure.toString());
+	  	}
+		if (result.wasSuccessful()) {
 			new StartTool().startUpStore();
-//		}
+		}
 	}
 	
 	
